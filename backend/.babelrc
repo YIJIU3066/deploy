@@ -1,0 +1,7 @@
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
+
+// yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/plugin-proposal-class-properties @babel/plugin-proposalobject-rest-spread @babel/plugin-transform-arrow-functions dotenvdefaults mongoose
