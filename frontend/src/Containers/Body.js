@@ -56,7 +56,7 @@ const Body = () => {
   const handleAdd = async () => {
     const {
       data: { message, card },
-    } = await axios.post('/card', {
+    } = await axios.post('/cards', {
       name,
       subject,
       score,

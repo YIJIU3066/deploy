@@ -1,11 +1,11 @@
 import { Router } from "express";
 import ScoreCard from "../models/ScoreCard";
-
+import bodyParser from 'body-parser';
 
 const router = Router();
 
-
-router.post("/card", async(req,res) => {
+router.use(bodyParser.json());
+router.post("/api/card", async(req,res) => {
     try{
         const {name, subject, score} = req.body
         const exist = await ScoreCard.findOne({name,subject})
@@ -34,7 +34,7 @@ router.post("/card", async(req,res) => {
     } 
 });
 
-router.delete("/cards", async(_,res) => {
+router.delete("/api/cards", async(_,res) => {
     try{
         await ScoreCard.deleteMany({});
         res.json({message: "Database cleared"})
@@ -44,7 +44,7 @@ router.delete("/cards", async(_,res) => {
 
 });
 
-router.get("/cards", async(req,res) =>{
+router.get("/api/cards", async(req,res) =>{
     console.log(req.query)   //{ type: 'name', queryString: 'AMY' }
     const { type, queryString } = req.query
 
