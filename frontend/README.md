@@ -1,3 +1,8 @@
+### 問題
+1. backend / server app.use(cors())
+  在local端的時候  console.log(process.env.NODE_ENV) => undefined
+  但 deploy 上去變成 development 的狀態 (and work!)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

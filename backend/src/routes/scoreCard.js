@@ -47,6 +47,7 @@ router.delete("/api/cards", async(_,res) => {
 });
 
 router.get("/api/cards", async(req,res) =>{
+    console.log('get')
     console.log(req.query)   //{ type: 'name', queryString: 'AMY' }
     const { type, queryString } = req.query
 
