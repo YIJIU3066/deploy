@@ -11,7 +11,7 @@ router.post("/api/cards", async(req,res) => {
     try{
         const {name, subject, score} = req.body
         const exist = await ScoreCard.findOne({name,subject})
-        console.log(exist)        
+      
         if(exist){
             await ScoreCard.updateMany({name, subject}, {score})
 
