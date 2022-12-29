@@ -5,8 +5,9 @@ import { ConnectionStates } from "mongoose";
 
 const router = Router();
 
-// router.use(bodyParser.json());
+router.use(bodyParser.json());
 router.post("/api/cards", async(req,res) => {
+    console.log('post!')
     try{
         const {name, subject, score} = req.body
         const exist = await ScoreCard.findOne({name,subject})
