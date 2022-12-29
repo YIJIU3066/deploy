@@ -67,6 +67,7 @@ const Body = () => {
   };
 
   const handleQuery = async () => {
+    console.log('handleQuery!')
     const {
       data: { messages, message },
     } = await axios.get('/cards', {
