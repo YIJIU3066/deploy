@@ -1,15 +1,16 @@
 import { Router } from "express";
 import ScoreCard from "../models/ScoreCard";
 import bodyParser from 'body-parser';
+import { ConnectionStates } from "mongoose";
 
 const router = Router();
 
-router.use(bodyParser.json());
-router.post("/api/card", async(req,res) => {
+// router.use(bodyParser.json());
+router.post("/api/cards", async(req,res) => {
     try{
         const {name, subject, score} = req.body
         const exist = await ScoreCard.findOne({name,subject})
-        
+        console.log(exist)        
         if(exist){
             await ScoreCard.updateMany({name, subject}, {score})
 
